@@ -54,7 +54,7 @@ class Page
 	?>
 		<style>
 		h1 {
-			color:black; font-size:24pt; text-align:center;
+			color:green; font-size:24pt; text-align:center;
 			font-family:arial, sans-serif
 		}
 		.menu {
@@ -62,18 +62,18 @@ class Page
 			font-family:arial, sans-serif; font-weight:bold
 		}
 		td {
-			background:green
+			background:write
 		}
 		p {
-			color:black; font-size:12pt; text-align:justify;
+			color:green; font-size:12pt; text-align:justify;
 			font-family:arial, sans-serif
 		}
 		p.foot {
-			color:black; font-size:9pt; text-align:center;
+			color:green; font-size:9pt; text-align:center;
 			font-family:arial, sans-serif; font-weight:bold
 		}
 		a:link,a:visited,a:active {
-			color:black
+			color:green
 		}
 		</style>
 	<?PHP

@@ -9,16 +9,31 @@
 		<?php 
 			session_start();
 			echo '<h1>理财树：账户管理</h1>';
-			if (!isset($_SESSION['valid_user'])) {
-				echo '<p>You are not logged in.</p>';
+			if (isset($_SESSION['valid_user'])) {
+				echo '<p>你已经登录，欢迎你 '.$_SESSION['valid_user'].'</p>';
 				echo '<a href="logout.php">Log out</a>';
 			} else {
-				echo '<p>You are logged in as '.$_SESSION['valid_user'].'</p>';
+				echo '<p>你还没有登录</p>';
 				echo '<a href="login.php">Log in</a>';
+				die(0);
 			}
 		?>
 			<h2>理财树：账户管理</h2>
-			<form action="upload.php" method="post" enctype="multipart/form-data">
+			<form action="./sql/update_cid.php" method="post" enctype="multipart/form-data">
+			<div>
+				<label for="cid">请输入你的姓名</label>
+				<br/>
+				<input type="text" name="name" size="50" maxLength="32"/>
+				<br/>
+				<label for="cid">请输入你的身份证号</label>
+				<br/>
+				<input type="text" name="cid" size="50" maxLength="18"/>
+				<br/>
+				<input type="submit" value="确定"/>
+			</div>
+			</form>
+			<!--  
+			<form action="./sql/upload.php" method="post" enctype="multipart/form-data">
 			<div>
 				<input type="hidden" name="MAX_FILE_SIZE" value="4194304"/>
 				<label for="idFile">请上传你的身份证复印件</label>
@@ -26,6 +41,8 @@
 				<br/>
 				<input type="submit" value="上传"/>
 			</div>
+			</form>
+			-->
 		<?php
 		}
 	}
