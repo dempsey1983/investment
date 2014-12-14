@@ -28,11 +28,16 @@
 		<?php 
 			if (isset($_SESSION['valid_user'])) {
 				echo '登录成功 :'.$_SESSION['valid_user'].'<br/>';
-				echo '<a href=logout.php>Log out</a><br/>';
+				echo '<a href=logout.php>退出登录</a><br/>';
 			} else {
 				if (isset($_POST['email'])) {
 					//尝试登录过，但是密码错误；
 					echo '邮箱/密码不匹配，请重新输入.<br />';
+					echo '<form method="post" action="forget_password.php">';
+					echo '<table>';
+					echo '<tr><td colspan="1" align="center">';
+					echo '<input type="submit" value="忘记密码"></td></tr>';
+					echo '</table></form>';
 				} else {
 					echo '请输入邮箱/密码.<br />';
 				}
@@ -41,17 +46,11 @@
 				echo '<form method="post" action="login.php">';
 				echo '<table>';
 				echo '<tr><td>邮箱:</td>';
-				echo '<td><input type="text" name = "email"></td></tr>';
+				echo '<td><input type="text" name = "email" size="32" maxLength="50" minLength="30"></td></tr>';
 				echo '<tr><td>密码:</td>';
-				echo '<td><input type="password" name = "password"></td></tr>';
+				echo '<td><input type="password" name = "password" size="33" maxLength="12" minLength="6"></td></tr>';
 				echo '<tr><td colspan="2" align="center">';
 				echo '<input type="submit" value="登录"></td></tr>';
-				echo '</table></form>';
-				
-				echo '<form method="post" action="forget_password.php">';
-				echo '<table>';
-				echo '<tr><td colspan="2" align="center">';
-				echo '<input type="submit" value="忘记密码"></td></tr>';
 				echo '</table></form>';
 			}
 		?>

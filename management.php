@@ -14,7 +14,7 @@
 				echo '<a href="logout.php">Log out</a>';
 			} else {
 				echo '<p>你还没有登录</p>';
-				echo '<a href="login.php">Log in</a>';
+				echo '<a href="login.php">前往登录页面</a>';
 				die(0);
 			}
 		?>

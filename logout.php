@@ -17,14 +17,14 @@
 	</style>
 </head>
 <body>
-<h1>Member Log out</h1>
+<h1></h1>
 <?php 
 	if (!empty($old_user)) {
 		echo "用户登出成功.<br/>";
 	} else {
-		echo "You are not logged in. and so have not been logged out.<br/>";
+		echo "你没有登录，不需要退出.<br/>";
 	}
 ?>
-<a href="login.php">Back to main page</a>;
+<a href="index.php">Back to main page</a>;
 </body>
 </html>
