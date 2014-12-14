@@ -18,7 +18,26 @@
 				die(0);
 			}
 		?>
+		
 			<h2>理财树：账户管理</h2>
+			<div>
+				<div>
+				</div>
+				<div>
+					<p>账户余额</p>
+				</div>
+				<div>
+					<p>账户余额</p>
+					<br/>
+					<p>冻结金额</p>
+				</div>
+				<div>
+					<input type="submit" value="充值"/>
+				</div>
+				<div>
+					<input type="submit" value="体现"/>
+				</div>
+			</div>
 			<form action="./sql/update_cid.php" method="post" enctype="multipart/form-data">
 			<div>
 				<label for="cid">请输入你的姓名</label>

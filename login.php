@@ -28,7 +28,11 @@
 		<?php 
 			if (isset($_SESSION['valid_user'])) {
 				echo '登录成功 :'.$_SESSION['valid_user'].'<br/>';
-				echo '<a href=logout.php>退出登录</a><br/>';
+				echo '<a href=management.php>即将登入，如果没有自动跳转，其手动点击</a><br/>';
+				//header("location:management.php");
+				echo "<script language=\"javascript\">";
+				echo "document.location=\"management.php\"";
+				echo "</script>";
 			} else {
 				if (isset($_POST['email'])) {
 					//尝试登录过，但是密码错误；

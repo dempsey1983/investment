@@ -24,7 +24,12 @@
 	} else {
 		echo "你没有登录，不需要退出.<br/>";
 	}
+	echo "<script language=\"javascript\">";
+	echo "document.location=\"index.php\"";
+	echo "</script>";
 ?>
+<!--  
 <a href="index.php">Back to main page</a>;
+-->
 </body>
 </html>

@@ -11,7 +11,7 @@ class Page
 							"登录" 	=>	"login.php",
 							"投资"	=>	"inverstment.php",
 							"借贷"	=>	"loan.php",
-							"管理"	=>	"management.php",
+							"管理"	=>	"management.php"
 							);
 	//Class Page's operations
 	public function __set($name, $value)
@@ -33,6 +33,7 @@ class Page
 		$this->DisplayKeywords();
 		$this->DisplayStytles();
 		$this->addJavaScript();
+		
 		echo "</head>\n<body>\n";
 		$this->DisplayHeader();
 		$this->DisplayMenu($this->buttons);
