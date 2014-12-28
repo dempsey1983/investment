@@ -4,22 +4,31 @@
 	}
 	class HomePage extends Page 
 	{
+		public function query() {
+			echo 'call query()';
+			echo $_POST['email'];
+			echo $_POST['password'];
+			if (isset($_POST['email']) && isset($_POST['password'])) {
+				$email = $_POST['email']; 
+			    if(filter_var($email, FILTER_VALIDATE_EMAIL)){ 
+			        echo '<p>This is a valid email.<p>'; 
+			    }else{ 
+			        echo '<p>This is an invalid email.</p>'; 
+			    } 
+			} else {
+				echo '<p>This is an invalid email 02.</p>'; 
+			}
+		}
 		public function addJavaScript() {
-		?>
+			if($_GET['do']=="yes"){
+			   echo '<p>addJavaScript-- register()</p>';	
+			   $this->query();
+			}
+		}
+		public function addJavaScript_01() {
+		?>  
 		<script type="text/javascript">
 			function chk_form(){
-				var user = document.getElementById("user");
-				if(user.value==""){
-					alert("用户名不能为空！");
-					return false;
-					//user.focus();
-				}
-				var pass = document.getElementById("pass");
-				if(pass.value==""){
-					alert("密码不能为空！");
-					return false;
-					//pass.focus();
-				}
 				var email = document.getElementById("email");
 				if(email.value==""){
 					alert("Email不能为空！");
@@ -32,30 +41,64 @@
 					return false;
 					//email.focus();
 				}
+				var pass = document.getElementById("Password");
+				if(pass.value==""){
+					alert("密码不能为空！");
+					return false;
+					//pass.focus();
+				}
 			}
 		</script>
 		<?php
 		}
-		public function DisplayContent() {
+		public function DisplayMain() {
 		?>
 		<div id="main">
-		<h1 class="top_title">理财树：用户注册</h1>
-	   	<h2 class="top_title"><a href="login.php" title="直接登录">已有账号，直接登录</a></h2>
-	   	<div class="demo">
-	   		<form id="reg" action="register.php" method="post" onsubmit="return chk_form();">
-	        	<p>用户名：<input type="text" class="input" name="username" id="user"></p>
-	            <p>密 &nbsp; 码：<input type="password" class="input" name="password" id="pass"></p>
-	            <p>E-mail：<input type="text" class="input" name="email" id="email"></p>
-	            <p><input type="submit" class="btn" value="提交注册"></p>
-	        </form>
+            <form action="register.php" method="post" id="emailreg">
+                <div id="relatedLoginBox">
+                    <input type="hidden" name="Redirect" id="Redirect" value="" />
+                    <ul id="login_nav">
+                        <li id="clearfix">
+                            <em>邮箱：</em>
+                            <input type="text" tabindex="1" name="email" id="email" placeholder="请填写常用邮箱" />
+                            <span class="Exp"></span>
+                        </li>
+                        <li id="validatecode" class="clearfix" style="padding-left: 35px;">
+                            <input type="text" name="emailvalidatecode" id="emailmbyzm" maxlength="6" class="yzmtxt" placeholder="请输入邮箱验证码" />
+                            <input type="button" class="fsyzm" id="getvefydata_email" value="发送验证码" />
+                            <span class="Exp"></span>
+                        </li>
+                        <li class="clearfix">
+                            <em>密码：</em>
+                            <input type="password" name="Password" id="Password" placeholder="请输入8-16位字母或数字" />
+                            <span class="Exp"></span>
+                        </li>
+                        <li class="clearfix">
+                            <em>确认：</em>
+                            <input type="password" name="Password" id="Password" placeholder="请重复输入上述密码" />
+                            <span class="Exp"></span>
+                        </li>
+                        <li>
+                            <p id="checkcorrect" style="height: 30px; line-height: 30px;">
+                                <input type="checkbox" id="agreeemail" name="agreeemail" value="0" checked="checked" class="check" />我同意
+                                <a href="#" target="_blank">《服务条款》</a>和
+                                <a class="policy1" href="#" style="display:initial" target="_blank">《借入协议》</a>
+                                <a class="policy2" href="#" style="display:none" target="_blank">《借出协议》</a>
+                            </p>
+                            <span class="Exp" style="margin-left:74px"></span>
+                        </li>
+                        <li class="mb0">
+                            <input type="button" id="emailregbtn" class="lgn" value="注 册" onclick="javascript:cmdclick()"/>
+                            <script type="text/javascript">
+							function cmdclick(){
+							   document.location.href="?do=yes";
+							}
+							</script>
+                        </li>
+                    </ul>
+                </div>
+            </form>
 		</div>
-		 <br/><div class="ad_76090"><script src="/js/ad_js/bd_76090.js" type="text/javascript"></script></div><br/>
-		</div>
-	
-		<div id="footer">
-		    <p>演示版本，如有商用需求，请联系 <a href="http://www.njtu.edu.cn">北京交通大学：孙建东</a></p>
-		</div>
-		<p id="stat"><script type="text/javascript" src="/js/tongji.js"></script></p>
 		<?php
 		}
 	}

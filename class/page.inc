@@ -5,14 +5,6 @@ class Page
 	public $content = "<p>你不理财，财不理你</p>";
 	public $title = "理财树";
 	public $keywords = "Investment for P2P";
-	public $buttons = array(
-							"主页"	=>  "index.php",
-							"注册"	=>	"register.php",
-							"登录" 	=>	"login.php",
-							"投资"	=>	"inverstment.php",
-							"借贷"	=>	"loan.php",
-							"管理"	=>	"management.php"
-							);
 	//Class Page's operations
 	public function __set($name, $value)
 	{
@@ -20,32 +12,35 @@ class Page
 	}
 	public function Display()
 	{
-		echo "<html>\n<head>\n";
-		echo '
-		<meta charset="utf-8">
-		<style type="text/css">
-			.demo{width:400px; margin:40px auto 0 auto; min-height:250px;}
-			.demo p{line-height:30px; padding:4px}
-			.input{width:180px; height:20px; padding:1px; line-height:20px; border:1px solid #999}
-			.btn{position: relative;overflow: hidden;display:inline-block;*display:inline;padding:4px 20px 4px;font-size:14px;line-height:18px;*line-height:20px;color:#fff;text-align:center;vertical-align:middle;cursor:pointer;background-color:#5bb75b;border:1px solid #cccccc;border-color:#e6e6e6 #e6e6e6 #bfbfbf;border-bottom-color:#b3b3b3;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px; margin-left:48px}
-		</style>';
+		session_start();
+	?>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<?php
 		$this->DisplayTitle();
 		$this->DisplayKeywords();
 		$this->DisplayStytles();
-		$this->addJavaScript();
-		
-		echo "</head>\n<body>\n";
+	?>	
+	</head>
+	<body>
+	<div style="width:100%;background-color:#f2f2f2;">
+	<div id="container">
+	<?php
+		$this->DisplayHeaderTop();
 		$this->DisplayHeader();
-		$this->DisplayMenu($this->buttons);
-		$this->DisplayContent();
+		$this->addJavaScript();
+		$this->DisplayMain();
 		$this->DisplayFooter();
-		echo "</body>\n</html>\n";
-	}
-	public function DisplayContent() {
-		echo $this->content;
+	?>
+	</div>
+	</div>
+	</body>
+	</html>
+	<?php
 	}
 	public function DisplayTitle() {
-		//session_start();
 		echo "<title>".$this->title."</title>";
 	}
 	public function DisplayKeywords() {
@@ -53,97 +48,100 @@ class Page
 	}
 	public function DisplayStytles() {
 	?>
-		<style>
-		h1 {
-			color:green; font-size:24pt; text-align:center;
-			font-family:arial, sans-serif
-		}
-		.menu {
-			color:black; font-size:12pt; text-align:center;
-			font-family:arial, sans-serif; font-weight:bold
-		}
-		td {
-			background:write
-		}
-		p {
-			color:green; font-size:12pt; text-align:justify;
-			font-family:arial, sans-serif
-		}
-		p.foot {
-			color:green; font-size:9pt; text-align:center;
-			font-family:arial, sans-serif; font-weight:bold
-		}
-		a:link,a:visited,a:active {
-			color:green
-		}
-		</style>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/info.css" />
 	<?PHP
 	}
 	public function addJavaScript() {
+		
+		echo '<p>addJavaScript()</p>';
+	}
+	public function DisplayHeaderTop() {
+	?>
+	<div id="header_top">
+        <div id="header_top1"></div>
+        <div id="header_top2"><a href="register.php">快速注册</a></div>
+        <div id="header_top3"><a href="login.php">立即登录</a></div>
+    </div>
+	<?PHP
 	}
 	public function DisplayHeader() {
 	?>
-		<table width=100% cellpadding="12" cellspacing="0" border="0">
-		<tr bgcolor="black">
-			<td align="left"><img src="./pic/logo.jpg" /></td>
-			<td>
-				<h1>理财树</h1>
-			</td>
-			<td align="right"><img src="./pic/logo.jpg" /></td>
-		</tr>
-		</table>
+    <div id="header">
+    	<img src="images/header_logo.jpg" alt=""/>
+      	<ul id="nav">
+        	<li><a href="index.php">首页</a></li>
+            <li><a href="inverstment.php">我要理财</a></li>
+			<li><a href="loan.php">我要借款</a></li>
+			<li><a href="help.php">新手指引</a></li>
+			<li><a href="about.php">关于我们</a></li>
+		</ul>
+ 	</div>
 	<?PHP
 	}
-	public function DisplayMenu($buttons) {
-		echo "<table width=\"100%\" bgcolor=\"red\" cellpadding=\"4\" cellspacing=\"4\">\n";
-		echo "<tr>\n";
-		//calculate button size
-		$width = 100/count($buttons);
-		
-		//echo $url;
-		while(list($name, $url) = each($buttons)) {
-			$this->DisplayButton($width, $name, $url, $this->IsURLCurrentPage($url));
-		}
-		echo "</tr>\n";
-		echo "</table>";
-	}
-	public function IsURLCurrentPage($url) {
-		if(strpos($_SERVER['PHP_SELF'], $url) == false) 
-		{
-			return false;
-		}
-		else
-		{
-			return true;
-		}
-	}
-	public function DisplayButton($width, $name, $url, $active = true) {
-		if($active) {
-			echo '<td width="'.$width.'%">
-					<a href="'.$url.'">
-					<img src="./pic/active.jpg" alt="'.$name.'" border="0"/></a>
-					<a href="'.$url.'"><span class="menu">'.$name.'</span>
-					</a>
-					</td>';
-		} else {
-			echo '<td width="'.$width.'%">
-					<a href="'.$url.'">
-					<img src="./pic/deactive.jpg" alt="'.$name.'" border="0"/></a>
-					<a href="'.$url.'"><span class="menu">'.$name.'</span>
-					</a>
-					</td>';
-		}
+	public function DisplayMain() {
+	?><!--  -->
+	<?PHP
 	}
 	public function DisplayFooter() {
 	?>
-		<table width="100%" bgcolor="black" cellpadding="12" border="0">
-		<tr>
-		<td>
-			<p class="foot">&copy; 理财树投资有限公司.</p>
-			<p class="foot">欢迎访问 <a href = "">www.licaishu.com</a></P>
-		</td>
-		</tr>
-		</table>
+	<div id="footer">
+		<HR style="border:1 dashed #987cb9" width="100%" color=#987cb9 SIZE=1></HR>
+		<div id="footer_top">
+			<div id="foot_left">
+				<div id="foot_left_logo">
+				<img src="images/logo.jpg" alt=""/>
+				</div>
+				<div id="foot_left_p">
+				<p>
+					理财树成立于2015年1月，是国内第一家由工商部门特批获得“金融信息服务”资质，从而得到政府认可的平台。理财致力于搭建一个安全、高效、诚信、透明的互联网金融平台，规范个人借贷行为，改善借款人状态，同时拓宽借出者投资渠道。
+				</p>
+				</div>
+			</div>
+			<div id="foot_right">
+				<h1>关于理财树</h1>
+				<br/>
+				<ul>
+				<li>理财树团队</li>
+				<li>媒体报道</li>
+				<li>招贤纳士</li>
+				<li>联系我们</li>
+				</ul>
+			</div>
+			<div id="foot_right">
+				<h1>业务信息</h1>
+				<br/>
+				<ul>
+				<li>我要借款</li>
+				<li>我要理财</li>
+				</ul>
+			</div>
+			<div id="foot_right">
+				<h1>诚信保障</h1>
+				<br/>
+				<ul>
+				<li>法律政策</li>
+				<li>本金保障</li>
+				<li>工作原理</li>
+				<li>资费说明</li>
+				</ul>
+			</div>
+			<div id="foot_right">
+				<h1>客户服务</h1>
+				<br/>
+				<ul>
+				<li>新浪微博</li>
+				<li>腾讯微博</li>
+				<li>微信</li>
+				<li>400-1855-955</li>
+				</ul>
+			</div>
+		</div>
+		<HR style="border:1 dashed #987cb9" width="100%" color=#987cb9 SIZE=1></HR>
+		<div id="footer_bottom">
+	        <p>Copyright Reserved 2007-2014©理财树（www.licaishu.com）&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;京ICP备01010001号&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;北京理财树投资股份有限公司</p>  
+    	</div>
+	</div>
 	<?PHP
 	}
 }

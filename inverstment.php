@@ -2,10 +2,13 @@
 	function __autoload($name){
 		include_once "./class/".$name.".inc";
 	}
-	class HomePage extends Page 
+	class inverstPage extends Page 
 	{
-		
+		public $content = "<p>欢迎光临理财树</p>";
+		public function DisplayMain() {
+			echo $this->content;
+		}
 	}
-	$homepage = new HomePage();
-	$homepage->Display();
+	$subpage = new inverstPage();
+	$subpage->Display();
 ?>

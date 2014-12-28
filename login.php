@@ -22,14 +22,13 @@
 	}
 	class HomePage extends Page 
 	{
-		public function DisplayContent() {
+		public function DisplayMain() {
 		?>
 			<h1>理财树：用户登录</h1>
 		<?php 
 			if (isset($_SESSION['valid_user'])) {
 				echo '登录成功 :'.$_SESSION['valid_user'].'<br/>';
 				echo '<a href=management.php>即将登入，如果没有自动跳转，其手动点击</a><br/>';
-				//header("location:management.php");
 				echo "<script language=\"javascript\">";
 				echo "document.location=\"management.php\"";
 				echo "</script>";

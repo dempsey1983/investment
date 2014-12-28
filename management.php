@@ -4,9 +4,35 @@
 	}
 	class HomePage extends Page 
 	{
-		public function DisplayContent() {
+		public function DisplayMain() {
 		?>
-		<?php 
+		<div id="main">
+		<div id="main_top">
+        <h1>我的人人贷</h1>
+        <img src="images/jiantou.png" alt="" /> 
+        <p>账户管理</p>
+        <img src="images/jiantou.png" alt="" />
+        <p>个人基础信息</p>  
+        </div>
+        <div id="main_left"></div>
+        <div id="main_right">
+        	<div id="main_right_top">个人基础信息</div>
+            <div id="main_right1">
+             <img src="images/touxiang.png" alt=""/>
+            </div>
+            <div id="main_right2">
+            		<ul id="person_info">
+                        <li>昵称 </li>
+                        <li>真实姓名</li>
+                        <li>身份证号</li>
+                        <li>邮箱</li>
+                        <li>性别</li>	                    
+                    </ul>
+              </div>
+        </div>
+    	</div>  
+		<?php
+		/* 
 			session_start();
 			echo '<h1>理财树：账户管理</h1>';
 			if (isset($_SESSION['valid_user'])) {
@@ -17,8 +43,9 @@
 				echo '<a href="login.php">前往登录页面</a>';
 				die(0);
 			}
-		?>
-		
+		*/
+		?>	
+		<!--
 			<h2>理财树：账户管理</h2>
 			<div>
 				<div>
@@ -51,6 +78,7 @@
 				<input type="submit" value="确定"/>
 			</div>
 			</form>
+			-->
 			<!--  
 			<form action="./sql/upload.php" method="post" enctype="multipart/form-data">
 			<div>
