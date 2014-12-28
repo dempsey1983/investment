@@ -162,7 +162,10 @@
 }
 #main_middle_bottom{
 	width:620px;
-	height:80px;
+	height:27px;
+}
+#main_middle_bottom input{
+	/*visibility:hidden;*/
 }
 #main_middle_bottom td{
 	color:grey;
