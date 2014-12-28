@@ -53,8 +53,6 @@ class Page
 	<?PHP
 	}
 	public function addJavaScript() {
-		
-		echo '<p>addJavaScript()</p>';
 	}
 	public function DisplayHeaderTop() {
 	?>
@@ -136,7 +134,7 @@ class Page
 				<li>400-1855-955</li>
 				</ul>
 			</div>
-		</div>
+		</div> 
 		<HR style="border:1 dashed #987cb9" width="100%" color=#987cb9 SIZE=1></HR>
 		<div id="footer_bottom">
 	        <p>Copyright Reserved 2007-2014©理财树（www.licaishu.com）&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;京ICP备01010001号&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;北京理财树投资股份有限公司</p>  

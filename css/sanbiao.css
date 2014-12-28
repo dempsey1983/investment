@@ -1,0 +1,252 @@
+@charset "utf-8";
+/* CSS Document */
+
+#container{
+	width: 960px;
+	margin: 0px auto;
+	
+}
+#header_top{
+	/*background-color:#000;*/
+	height:35px;
+}
+#header_top1{
+	width:730px;
+	float:left;
+	height:35px;
+}
+#header_top2{
+	width:100px;
+	float:left;
+}
+#header_top2 a{
+	font-size:15px;
+	font-family:'Microsoft Yahei' , SimHei , sans-serif;
+	color:#29aadf;
+	line-height:35px;
+}
+#header_top2 a:hover{
+	color:#555555;
+	}
+#header_top3{
+	width:100px;
+	float:left;
+}
+#header_top3 a{
+	font-size:15px;
+	font-family:'Microsoft Yahei' , SimHei , sans-serif;
+	color: #92c12f;
+	line-height:35px;
+}
+#header_top3 a:hover{
+	color:#555555;
+	}
+#header{
+	height:72px;
+	background-color:#FFF;
+	
+}
+
+#header img{
+	float:left;
+}
+#nav li{
+	width: 105px;
+	margin-left:26px; 
+	float: left;
+}
+#nav a{
+	font-size: 18px;
+	font-family: '微软雅黑';
+	color:#555555;
+	display: block;
+	width: 105px;
+	height: 72px;
+	text-align: center;
+	line-height: 72px;
+
+}
+#nav a:hover{
+	color:#2ea7e0;
+}
+	
+#main {
+	width:960px;
+	
+	}
+#main_top{
+	width:960px;
+	height:24px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+#main_top1{
+	width:620px;
+	height:24px;
+	margin-left:10px;
+	float:left;
+	
+}
+
+#main_top1 h1{
+	float:left;
+	line-height:24px;
+	font-size:16px;
+	font-family:'Microsoft Yahei' , SimHei , sans-serif;
+	
+}
+#main_top1 img{
+	float:left;
+}
+#main_top1 h2{
+	float:left;
+	line-height:24px;
+	font-size:14px;
+	font-family:'Microsoft Yahei' , SimHei , sans-serif;
+	
+}
+#main_middle{
+	width:920px;
+	height:130px;
+	border:solid 1px #e0e0e0;
+	padding:19px;
+	background:#FFF;
+}
+#main_middle_left{
+	border-right: 1px solid #f2f2f2;
+    float: left;
+    height: 130px;
+    padding-right: 19px;
+    width: 600px;
+	
+}
+#main_middle_left_top{
+	margin-bottom:10px;
+	width:600px;
+	height:30px;
+}
+#main_middle_left_top1{
+	font-size:18px;
+	line-height:30px;
+	font-family:'Microsoft Yahei' , SimHei , sans-serif;
+	float:left;	
+	color:#414a4c;
+	font-weight:500;
+}
+#main_middle_left_top2 a{
+		display:block
+		width:28px;
+		height:21px;
+		background: none repeat scroll 0 0 #dfdfdf;
+    	border-radius: 4px;
+    	cursor: pointer;    
+    	margin: 5px 0 0 10px;
+    	padding: 1px 12px;
+		float:left;
+		color:#999;
+		font-family:'Microsoft Yahei' , SimHei , sans-serif;
+		line-height: 21px;
+		font-size:14px;
+		font-weight:400;
+		
+}
+#main_middle_left_top2 a:hover{
+	    color:#f8f7e0;
+		background: none repeat scroll 0 0 #83a700;
+}
+#main_middle_bottom{
+	width:620px;
+	height:80px;
+}
+#main_middle_bottom td{
+	color:grey;
+	line-height:20px;
+	font-size:12px;
+	font-weight:400;
+	font-family:'Microsoft Yahei' , SimHei , sans-serif;
+
+}
+.ax {/* 按钮自适应文字宽度*/
+/*padding: 0 .25em;*/
+width: 0; /* for IE only */
+width: auto;
+border:none;
+overflow: visible;
+background:#fff;
+cursor: pointer;
+ font-size: 14px;
+ margin:0px 5px;
+ border-radius: 4px;
+ font-family:'Microsoft Yahei' , SimHei , sans-serif;
+ padding:0px 15px;
+ color:#555;
+ 
+}
+#main_bottom{
+	width:920px;
+	border:1px solid #e0e0e0;
+	margin-top:20px;
+	padding:19px;
+	background:#FFF;
+
+}
+#main_bottom_top{
+	width:920px;
+	height:48px;
+	margin-bottom:20px;
+}
+#main_bottom td{
+	font-size:18px;
+	font-family:'Microsoft Yahei' , SimHei , sans-serif;
+}
+#main_bottom_top1{
+	width:96px;
+	height:36px;
+	float:left;
+	font-family:'Microsoft Yahei' , SimHei , sans-serif;
+	font-size:24px;
+	font-weight:500;
+	color: #666;
+	margin-right:10px;
+}
+#main_bottom_top2 a{
+	border-radius: 12px;
+    font-size: 14px;
+	font-weight:400;
+	display:block;
+    height: 23px;
+    line-height: 23px;
+    float:left;
+	cursor: pointer;
+    padding: 0 15px;
+    text-align: center;
+	background-color: #8ab46e;
+	margin-top:10px;
+	color:#FFF;
+}
+#main_bottom_top2 a:hover{
+	background-color: #6e8b00;
+}
+.main_bottom_top3{
+	width:170px;
+	height:48px;
+	float:right;
+}
+.main_bottom_top3_1{
+	width:170px;
+	height:21px;
+	float:right;
+	text-align: center;
+	font-size:14px;
+	color:#666;
+}
+.main_bottom_top3_2{
+	width:170px;
+	height:28px;
+	float:right;
+	text-align:center;
+	font-size:14px;
+	color:#666;
+}
+	
+
