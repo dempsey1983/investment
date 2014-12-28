@@ -118,7 +118,13 @@
     height: 130px;
     padding-right: 19px;
     width: 600px;
-	
+}
+#main_middle_right{
+	border-right: 1px solid #f2f2f2;
+    float: left;
+    height: 130px;
+    padding-left: 19px;
+    width: 280px;
 }
 #main_middle_left_top{
 	margin-bottom:10px;
@@ -166,7 +172,7 @@
 	font-family:'Microsoft Yahei' , SimHei , sans-serif;
 
 }
-.ax {/* 按钮自适应文字宽度*/
+.unfocus {/* 按钮自适应文字宽度*/
 /*padding: 0 .25em;*/
 width: 0; /* for IE only */
 width: auto;
@@ -180,7 +186,21 @@ cursor: pointer;
  font-family:'Microsoft Yahei' , SimHei , sans-serif;
  padding:0px 15px;
  color:#555;
- 
+}
+.focus {/* 按钮自适应文字宽度*/
+/*padding: 0 .25em;*/
+width: 0; /* for IE only */
+width: auto;
+border:none;
+overflow: visible;
+background:#2EA7E0;
+cursor: pointer;
+ font-size: 14px;
+ margin:0px 5px;
+ border-radius: 4px;
+ font-family:'Microsoft Yahei' , SimHei , sans-serif;
+ padding:0px 15px;
+ color:#555;
 }
 #main_bottom{
 	width:920px;

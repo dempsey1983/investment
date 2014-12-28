@@ -15,15 +15,6 @@
 			include_once("./sql/connect.php");
 			$query = mysql_query("select * from tb_borrow");
 			$num_result = mysql_num_rows($query);
-//			echo "<p>Number of rows found: ".$num_result."</p>";
-/*		
-			for($i = 0; $i < $num_result; $i++) {
-				$row = mysql_fetch_array($query);
-				echo "<p><strong>".($i+1).". Title: ";
-				echo htmlspecialchars(stripslashes($row['amount']));
-				echo "</strong></p>";
-			}
-*/
 		?>
 		<div id="main">
         	<div id="main_top">
@@ -44,27 +35,27 @@
                         <table id="main_middle_bottom">
   							<tr>
    							  <td> 标的类型</td>
-                              <td> <input class="ax" type="button" value="不限"></td>
-    						  <td> <input class="ax" type="button" value="实地认证标"></td>
-                              <td> <input class="ax" type="button" value="信用认证标"></td>
-                              <td> <input class="ax" type="button" value="机构担保标"></td>
-                              <td> <input class="ax" type="button" value="智能理财标"></td>
+                              <td> <input class="focus" type="button" value="不限"></td>
+    						  <td> <input class="unfocus" type="button" value="实地认证标"></td>
+                              <td> <input class="unfocus" type="button" value="信用认证标"></td>
+                              <td> <input class="unfocus" type="button" value="机构担保标"></td>
+                              <td> <input class="unfocus" type="button" value="智能理财标"></td>
   							</tr>
   							<tr>
     						  <td> 借款期限</td>
-                              <td> <input class="ax" type="button" value="不限"></td>
-    						  <td> <input class="ax" type="button" value="6个月及以下"></td>
-                              <td> <input class="ax" type="button" value="7-12个月"></td>
-                              <td> <input class="ax" type="button" value="13-24个月"></td>
-                              <td> <input class="ax" type="button" value="25个月及以上"></td>
+                              <td> <input class="focus" type="button" value="不限"></td>
+    						  <td> <input class="unfocus" type="button" value="6个月及以下"></td>
+                              <td> <input class="unfocus" type="button" value="7-12个月"></td>
+                              <td> <input class="unfocus" type="button" value="13-24个月"></td>
+                              <td> <input class="unfocus" type="button" value="25个月及以上"></td>
  							</tr>
  							<tr>
    							 <td> 认证等级</td>
-                              <td> <input class="ax" type="button" value="不限"></td>
-                              <td> <input class="ax" type="button" value="A"></td>
-                              <td> <input class="ax" type="button" value="B"></td>
-                              <td> <input class="ax" type="button" value="C"></td>
-                              <td> <input class="ax" type="button" value="D"></td>
+                              <td> <input class="focus" type="button" value="不限"></td>
+                              <td> <input class="unfocus" type="button" value="A"></td>
+                              <td> <input class="unfocus" type="button" value="B"></td>
+                              <td> <input class="unfocus" type="button" value="C"></td>
+                              <td> <input class="unfocus" type="button" value="D"></td>
   							</tr>
 						</table>                    
                 </div>
@@ -116,7 +107,7 @@
 								
 								?></td>
 							<td width="140"><?php 
-								echo '<a href="detailPage.php?loanId='.$row['id'].'">';
+								echo '<a href="loanDetailPage.php?loanId='.$row['id'].'">';
 								echo $row['title'];
 								echo '</a>';
 								?></td>
