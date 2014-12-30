@@ -85,20 +85,6 @@
                         </tr>
                         </table>
                         </form>
-                      	<!--  
-                        <form action="inverstment.php" method="post">
-                        	<table id="main_middle_bottom">
-  							<tr>
-   							  <td> 标的类型</td>
-                              
-    						  <td> <input class="unfocus" type="checkbox" name="loanType"  value="1" onClick="this.form.submit()">信用认证标</td>
-                              <td> <input class="unfocus" type="checkbox" name="loanType"  value="2" onClick="this.form.submit()">实地认证标</td>
-                              <td> <input class="unfocus" type="checkbox" name="loanType"  value="3" onClick="this.form.submit()">机构担保标</td>
-                              <td> <input class="unfocus" type="checkbox" name="loanType"  value="4" onClick="this.form.submit()">智能理财标</td>
-  							</tr>
-  							</table>
-  						</form>
-  						-->
   						<form action="inverstment.php" method="post">
   							<table id="main_middle_bottom">
   							<tr>
